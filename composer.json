@@ -1,12 +1,13 @@
 {
-    "name": "miladimos/package-skeleton",
-    "description": "test description",
-    "homepage": "https://github.com/miladimos/package-skeleton",
+    "name": "laravelir/newsletters",
+    "description": "laravel newsletters package",
+    "homepage": "https://github.com/laravelir/newsletters",
     "type": "library",
     "keywords": [
         "laravel",
         "laravel-package",
         "laravel support",
+        "laravel newsletters",
         "lumen packages",
         "laravel packages",
         "lumen support"
@@ -14,33 +15,33 @@
     "authors": [
         {
             "name": "miladimos",
-            "email": "message.tome1331@gmail.com",
+            "email": "miladimos@outlook.com",
             "role": "maintaner",
             "homepage": "https://github.com/miladimos"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Miladimos\\Package\\": "src/"
+            "Laravelir\\Newsletters\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Miladimos\\Package\\Tests\\": "tests"
+            "Laravelir\\Newsletters\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "PackageServiceProvider"
+                "NewslettersServiceProvider"
             ],
             "aliases": {
-                "Package": "Miladimos\\Package\\Facades\\PackageFacade"
+                "Newsletters": "Laravelir\\Newsletters\\Facades\\NewslettersFacade"
             }
         }
     },
     "require": {
-        "php": ">=7.2"
+        "php": ">=7.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.4"
