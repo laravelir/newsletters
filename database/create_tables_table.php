@@ -20,6 +20,17 @@ class CreateNewslettersTable extends Migration
             $table->softDeletes();
             $table->timestamps();
         });
+
+        Schema::create('newsletters', function (Blueprint $table) {
+            $table->id();
+            $table->uuid('uuid')->unique();
+            $table->foreignId('subscriber_id');
+            $table->string('subject');
+            $table->text('body');
+            $table->timestamp('sent_at')->nullable();
+            $table->timestamp('sended_at')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -30,5 +41,6 @@ class CreateNewslettersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('newsletter_subscribers');
+        Schema::dropIfExists('newsletters');
     }
 }
