@@ -4,7 +4,7 @@ namespace Laravelir\Newsletters\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Laravelir\Newsletters\Console\Commands\InstallNewslettersCommand;
-use Laravelir\Newsletters\Facades\NewslettersFacade;
+use Laravelir\Newsletters\Newsletters;
 
 class NewslettersServiceProvider extends ServiceProvider
 {
@@ -34,7 +34,7 @@ class NewslettersServiceProvider extends ServiceProvider
     private function registerFacades()
     {
         $this->app->bind('newsletters', function ($app) {
-            return new NewslettersFacade();
+            return new Newsletters();
         });
     }
 
