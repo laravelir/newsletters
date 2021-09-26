@@ -27,6 +27,7 @@ class CreateNewslettersTable extends Migration
             $table->foreignId('subscriber_id');
             $table->string('subject');
             $table->text('body');
+            $table->enum('delivered', ['YES', 'NO'])->default('NO');
             $table->timestamp('sent_at')->nullable();
             $table->timestamp('sended_at')->nullable();
             $table->timestamps();
