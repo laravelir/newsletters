@@ -33,7 +33,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "NewslettersServiceProvider"
+                "Laravelir\\Newsletters\\Providers\\NewslettersServiceProvider"
             ],
             "aliases": {
                 "Newsletters": "Laravelir\\Newsletters\\Facades\\NewslettersFacade"

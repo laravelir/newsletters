@@ -3,7 +3,7 @@
 namespace Laravelir\Newsletters\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Laravelir\Newsletters\Console\Commands\InstallNewslettersCommand;
+use Laravelir\Newsletters\Console\Commands\InstallPackageCommand;
 use Laravelir\Newsletters\Newsletters;
 
 class NewslettersServiceProvider extends ServiceProvider
@@ -48,7 +48,7 @@ class NewslettersServiceProvider extends ServiceProvider
     private function registerCommands()
     {
         $this->commands([
-            InstallNewslettersCommand::class,
+            InstallPackageCommand::class,
         ]);
     }
 

@@ -4,7 +4,7 @@ namespace Laravelir\Newsletters\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class InstallNewslettersCommand extends Command
+class InstallPackageCommand extends Command
 {
     protected $signature = 'newsletters:install';
 
