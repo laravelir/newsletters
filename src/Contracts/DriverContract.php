@@ -11,4 +11,6 @@ interface DriverContract
     public function toggleSubscribe();
 
     public function deleteSubscriber();
+
+    public function send();
 }

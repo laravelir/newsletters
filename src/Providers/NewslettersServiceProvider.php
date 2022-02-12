@@ -24,11 +24,9 @@ class NewslettersServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        if ($this->app->runningInConsole()) {
-            $this->registerCommands();
-            $this->registerPublishes();
-            $this->publishConfig();
-        }
+        $this->registerCommands();
+        $this->publishConfig();
+        $this->publishMigrations();
     }
 
     private function registerFacades()
@@ -38,24 +36,27 @@ class NewslettersServiceProvider extends ServiceProvider
         });
     }
 
-    private function registerPublishes()
-    {
-        $this->publishes([
-            __DIR__ . '/../../config/newsletters.php' => config_path('newsletters.php')
-        ], 'package-config');
-    }
-
     private function registerCommands()
     {
-        $this->commands([
-            InstallPackageCommand::class,
-        ]);
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                InstallPackageCommand::class,
+            ]);
+        }
     }
 
     public function publishConfig()
     {
         $this->publishes([
             __DIR__ . '/../../config/newsletters.php' => config_path('newsletters.php')
-        ], 'package-config');
+        ], 'newsletters-config');
+    }
+
+    protected function publishMigrations()
+    {
+        $timestamp = date('Y_m_d_His', time());
+        $this->publishes([
+            __DIR__ . '/../../database/migrations/create_newsletters_table.stub' => database_path() . "/migrations/{$timestamp}_create_newsletters_table.php",
+        ], 'newsletters-migration');
     }
 }

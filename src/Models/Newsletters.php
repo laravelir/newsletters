@@ -17,6 +17,6 @@ class Newsletters extends Model
 
     protected $guarded = [];
 
-    protected $dates = ['sent_at', 'sended_at'];
+    protected $dates = ['sent_at', 'failed_at'];
 
 }

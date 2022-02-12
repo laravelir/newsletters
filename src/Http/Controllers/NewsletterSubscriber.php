@@ -12,4 +12,14 @@ class NewsletterSubscriber extends Controller
     {
         //
     }
+
+    public function toggleSubscribe(Request $request)
+    {
+        //
+    }
+
+    public function send(Request $request)
+    {
+        //
+    }
 }
