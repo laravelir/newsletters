@@ -13,10 +13,10 @@ class Newsletters extends Model
 
     protected $table = 'newsletters';
 
-    // protected $fillable = ['name'];
+    // protected $fillable = ['email', 'uuid', 'deleted_at'];
 
     protected $guarded = [];
 
     protected $dates = ['sent_at', 'failed_at'];
-
+    // protected $dates = ['deleted_at'];
 }
