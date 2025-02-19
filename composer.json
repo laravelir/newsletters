@@ -3,6 +3,7 @@
     "description": "laravel newsletters package",
     "homepage": "https://github.com/laravelir/newsletters",
     "type": "library",
+    "version": "0.1.0",
     "keywords": [
         "laravel",
         "laravel-package",
