@@ -7,17 +7,14 @@ use Laravelir\Newsletters\Enums\MessageDeliveryStatusEnum;
 
 class CreateNewslettersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('newsletter_subscribers', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->unique();
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
+            $table->string('mobile')->unique()->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -37,11 +34,7 @@ class CreateNewslettersTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('newsletter_subscribers');

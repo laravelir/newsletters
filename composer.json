@@ -9,15 +9,13 @@
         "laravel-package",
         "laravel support",
         "laravel newsletters",
-        "lumen packages",
-        "laravel packages",
-        "lumen support"
+        "laravel packages"
     ],
     "authors": [
         {
             "name": "miladimos",
             "email": "miladimos@outlook.com",
-            "role": "maintaner",
+            "role": "maintainer",
             "homepage": "https://github.com/miladimos"
         }
     ],
